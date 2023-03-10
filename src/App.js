@@ -26,24 +26,26 @@ export default App;*/
 
 
 import React from "react";
-import ReactCanvasPaint from 'react-canvas-paint'
+import ReactCanvasPaint from './canvas'
 import 'react-canvas-paint/dist/index.css'
+import { useState } from "react";
 import './css.css'; 
-
-let e;
+import Menu from "./Menu";
   
 export default function DrawingCanvasGfg(){
+
+  const [lineColor, setLineColor] = useState("black");
 
   function refreshPage() {
     window.location.reload(false);
   }
   
-
   return (
       
     <div>
-      <h1></h1>
-      <ReactCanvasPaint width={window.innerWidth - 10} height={window.innerHeight - 130} colors={['#7030A2', '#000000', '#0170C1', '#FE0002', '#FFFF01', '#45fa9f', '#484daf']}/>
+      <h1 className="head">Malováníčko</h1>
+      <ReactCanvasPaint width={window.innerWidth - 10} height={window.innerHeight - 130} colors={[lineColor]}/>
+      <Menu setLineColor={setLineColor}/>
       <button onClick={refreshPage} className="button-9">Reset</button>
     </div>
   );
