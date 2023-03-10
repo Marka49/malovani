@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -22,4 +22,32 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
+
+
+import React from "react";
+import ReactCanvasPaint from 'react-canvas-paint'
+import 'react-canvas-paint/dist/index.css'
+import './css.css'; 
+
+let e;
+  
+export default function DrawingCanvasGfg(){
+
+  function refreshPage() {
+    window.location.reload(false);
+  }
+  
+
+  return (
+      
+    <div>
+      <h1></h1>
+      <ReactCanvasPaint width={window.innerWidth - 10} height={window.innerHeight - 130} colors={['#7030A2', '#000000', '#0170C1', '#FE0002', '#FFFF01', '#45fa9f', '#484daf']}/>
+      <button onClick={refreshPage} className="button-9">Reset</button>
+    </div>
+  );
+};
+
+
+
